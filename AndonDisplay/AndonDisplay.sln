@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36623.8 d17.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AndonDisplay", "AndonDisplay\AndonDisplay.csproj", "{A716D547-87AD-4E22-B300-5D8607F4D9AF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A716D547-87AD-4E22-B300-5D8607F4D9AF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A716D547-87AD-4E22-B300-5D8607F4D9AF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A716D547-87AD-4E22-B300-5D8607F4D9AF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A716D547-87AD-4E22-B300-5D8607F4D9AF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {70D9CA70-EE58-4E99-9795-4851BD5181ED}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,29 @@
+# --- Visual Studio Specifics ---
+.vs/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# --- Build Results (The most important part) ---
+# This matches 'bin' and 'obj' folders inside ANY of your project folders
+[Bb]in/
+[Oo]bj/
+
+# --- NuGet Packages ---
+packages/
+!packages/build/
+*.nupkg
+
+# --- Temporary Files ---
+*.log
+*.tmp
+*.cache
+
+# --- OS Generated Files ---
+Thumbs.db
+.DS_Store
+
+# --- SQL Server LocalDB files (Optional but good safety) ---
+*.mdf
+*.ldf

@@ -1,0 +1,81 @@
+﻿<Window x:Class="RunnerDisplay.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Runner Replenishment System" Height="600" Width="900"
+        Background="#F3F4F6" FontFamily="Segoe UI">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Border Grid.Row="0" Background="#C2410C" Padding="20">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+
+                <StackPanel Grid.Column="0" Orientation="Horizontal">
+                    <TextBlock Text="RUNNER DASHBOARD" Foreground="White" FontSize="24" FontWeight="Bold" VerticalAlignment="Center"/>
+                    <Border Background="White" CornerRadius="10" Margin="20,0,0,0" Padding="10,2" VerticalAlignment="Center">
+                        <TextBlock x:Name="txtCount" Text="0 TASKS PENDING" FontWeight="Bold" Foreground="#C2410C"/>
+                    </Border>
+                </StackPanel>
+
+                <StackPanel Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="20,0">
+                    <TextBlock Text="NEXT RUN IN" Foreground="#FDBA74" FontSize="10" HorizontalAlignment="Center" FontWeight="Bold"/>
+                    <TextBlock x:Name="txtTimer" Text="05:00" Foreground="White" FontSize="22" FontWeight="Bold" FontFamily="Consolas"/>
+                </StackPanel>
+
+                <StackPanel Grid.Column="2" VerticalAlignment="Center" Margin="20,0,0,0">
+                    <TextBlock x:Name="txtConnection" Text="● CONNECTED" Foreground="White" FontWeight="Bold" HorizontalAlignment="Right"/>
+                </StackPanel>
+            </Grid>
+        </Border>
+
+        <Grid x:Name="EmptyState" Grid.Row="1" Visibility="Collapsed">
+            <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+                <TextBlock Text="✔" FontSize="80" Foreground="#22C55E" HorizontalAlignment="Center"/>
+                <TextBlock Text="ALL SYSTEMS NORMAL" FontSize="24" FontWeight="Bold" Foreground="#374151" Margin="0,20,0,0"/>
+                <TextBlock Text="No replenishment needed at this time." Foreground="Gray" HorizontalAlignment="Center"/>
+            </StackPanel>
+        </Grid>
+
+        <ScrollViewer Grid.Row="1" Padding="20">
+            <ItemsControl x:Name="TaskList">
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <Border Background="White" Margin="0,0,0,15" CornerRadius="8" Padding="15">
+                            <Border.Effect>
+                                <DropShadowEffect Color="Gray" BlurRadius="5" ShadowDepth="1" Opacity="0.1"/>
+                            </Border.Effect>
+
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                </Grid.ColumnDefinitions>
+
+                                <StackPanel Grid.Column="0" VerticalAlignment="Center">
+                                    <TextBlock Text="{Binding StationName}" FontSize="14" Foreground="Gray" FontWeight="Bold"/>
+                                    <TextBlock Text="{Binding PartName}" FontSize="22" FontWeight="Bold" Foreground="#1F2937"/>
+                                </StackPanel>
+
+                                <StackPanel Grid.Column="1" VerticalAlignment="Center" Margin="20,0">
+                                    <TextBlock Text="{Binding CurrentQuantity}" FontSize="28" FontWeight="Bold" Foreground="#DC2626" HorizontalAlignment="Right"/>
+                                    <TextBlock Text="REMAINING" FontSize="10" Foreground="Gray" HorizontalAlignment="Right"/>
+                                </StackPanel>
+
+                               
+                            </Grid>
+                        </Border>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
+        </ScrollViewer>
+    </Grid>
+</Window>
